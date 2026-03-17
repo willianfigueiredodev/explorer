@@ -70,11 +70,22 @@ O portal se abrirá no seu navegador em `http://localhost:5555`. Lá você pode 
 4. O Backend aceitará o arquivo instantaneamente e o processará em *background* para não travar a aplicação (mesmo com bases de 40.000 linhas).
 5. Selecione uma **Área de Avaliação** no seletor para que os dados surjam gradualmente no *Dashboard Glassmorphism*.
 
+## 🛠️ Tecnologias Utilizadas
+**Frontend:**
+- React (Vite)
+- TypeScript
+- CSS Vanilla (Glassmorphism e Animações nativas)
+- React Dropzone
+
+**Backend:**
+- NestJS (Node.js)
+- TypeScript
+- Prisma ORM
+- SQLite (Banco Relacional em Arquivo)
+- Streams (csv-parser) para manipulação de grandes arquivos assincronamente
+
 ---
 
-## 🔮 O que eu faria diferente num cenário Produtivo?
-Se o projeto demandasse uma escala corporativa maior, eu melhoraria os seguintes pontos:
-- **Mensageria Assíncrona (RabbitMQ / SQS)**: Se houvesse acesso fácil a infraestrutura completa em nuvem, aplicaria um Job Worker externo. O App enviaria o arquivo pro S3/MinIO e uma fila pegaria para processamento totalmente assíncrono longe da Thread da API.
-- **Cache (Redis)**: Implementaria caching no backend para acelaração de leitura rápida nas consultas recorrentes como `/api/areas` e a métrica de Distribuição, minimizando chamadas ao banco relacional.
-- **Paginação Cursor-Based**: Incluiria no React uma tabela baseada em Prisma Pagination (Limit/Offset/Cursor) com botões *"Próximo"* e *"Anterior"* para carregar centenas de milhares de revistas de forma ainda mais escalável (Atualmente lidamos bem renderizando as primeiras 500 no DOM).
-- **Testes**: Criaria um conjunto robusto de testes de Resiliência (`Jest`) validando injeção falha de dados no banco e o tratamento do disco IO.
+## 👨‍💻 Desenvolvedor
+Desenvolvido com dedicação por **Willian Figueiredo**.
+[LinkedIn](https://www.linkedin.com/in/willianfigueiredodev/) • [GitHub](https://github.com/willianfigueiredodev)
