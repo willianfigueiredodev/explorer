@@ -12,12 +12,10 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Gradiente vibrante premium */
   background: linear-gradient(135deg, #298078 0%, #76b88e 50%, #c4e8b8 100%) !important;
   font-family: 'Inter', sans-serif;
 }
 
-/* --- CARD DE VIDRO JATEADO --- */
 .container {
   width: 90%;
   max-width: 440px;
@@ -46,7 +44,6 @@ html, body, #root {
   font-weight: 500 !important;
 }
 
-/* --- ÁREA DE UPLOAD (Agora forçando centralização) --- */
 .dropzone-area {
   display: flex !important;
   flex-direction: column !important;
@@ -58,7 +55,7 @@ html, body, #root {
   background: rgba(255, 255, 255, 0.2) !important; 
   cursor: default !important;
   transition: all 0.3s ease !important;
-  min-height: 220px; /* Garante que não vai encolher/pular do nada */
+  min-height: 220px;
 }
 
 .dropzone-area:hover {
@@ -66,7 +63,6 @@ html, body, #root {
   border-color: rgba(255, 255, 255, 1) !important;
 }
 
-/* --- ÍCONE DA PASTA --- */
 .icon-folder {
   font-size: 2.8rem !important;
   display: block !important;
@@ -74,7 +70,6 @@ html, body, #root {
   opacity: 0.9;
 }
 
-/* --- GRUPO DE AÇÕES (Quando tem arquivo) --- */
 .action-group {
   display: flex;
   flex-direction: column;
@@ -89,7 +84,6 @@ html, body, #root {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- BOTÃO PRINCIPAL ANIMADO --- */
 .btn-select {
   all: unset;
   position: relative;
@@ -127,7 +121,6 @@ html, body, #root {
   width: 100%;
 }
 
-/* --- BOTÃO DE REMOVER --- */
 .btn-remove {
   all: unset;
   color: #051F20 !important;
@@ -142,4 +135,30 @@ html, body, #root {
 .btn-remove:hover {
   color: #d9534f !important; 
   opacity: 1;
+}
+
+.dist-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.dist-item:hover {
+  background-color: rgba(255, 255, 255, 0.45); 
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: 8px; 
+}
+
+.active-dist {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+  transform: scale(1.05) !important;
+  z-index: 1;
+  position: relative;
 }

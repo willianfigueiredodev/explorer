@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Journal {
+  id              String           @id @default(uuid())
+  issn            String           @unique
+  title           String
+  
+  classifications Classification[]
+}
+
+model Area {
+  id              String           @id @default(uuid())
+  name            String           @unique
+  
+  classifications Classification[]
+}
+
+model Classification {
+  id        String  @id @default(uuid())
+  estrato   String  
+  
+  journalId String
+  areaId    String
+  
+  journal   Journal @relation(fields: [journalId], references: [id], onDelete: Cascade)
+  area      Area    @relation(fields: [areaId], references: [id], onDelete: Cascade)
+
+  @@unique([journalId, areaId]) 
+}
