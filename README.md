@@ -1,4 +1,4 @@
-# Qualis Explorer - Desafio Agora Sabemos
+# Qualis Explorer
 
 Este projeto atende aos requisitos do desafio técnico para a vaga de Desenvolvedor(a) na "Agora Sabemos", permitindo a importação massiva (Big Data) e exploração da base do QUALIS CAPES.
 
